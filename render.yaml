@@ -2,7 +2,7 @@ services:
   - type: web
     name: task-manager
     runtime: docker
-    plan: starter
+    plan: free
     envVars:
       - key: APP_ENV
         value: production
@@ -37,4 +37,4 @@ services:
 
 databases:
   - name: task-manager-db
-    plan: starter
+    plan: free
