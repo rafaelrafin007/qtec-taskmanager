@@ -1,10 +1,8 @@
 services:
   - type: web
     name: task-manager
-    runtime: php
+    runtime: docker
     plan: starter
-    buildCommand: composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev
-    startCommand: php -S 0.0.0.0:$PORT -t public
     envVars:
       - key: APP_ENV
         value: production
@@ -12,6 +10,8 @@ services:
         value: "false"
       - key: APP_KEY
         generateValue: true
+      - key: APP_URL
+        value: https://task-manager.onrender.com
       - key: DB_CONNECTION
         value: pgsql
       - key: DB_HOST

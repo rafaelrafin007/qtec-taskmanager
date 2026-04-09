@@ -62,8 +62,10 @@ php artisan db:seed
 php artisan test
 ```
 
-## Render Deployment Note
-This project includes a starter `render.yaml` for a Laravel web service with a managed PostgreSQL database. After deploy, run migrations on Render using a one-off shell command:
+## Render Deployment
+This app is deployed on Render using the Docker runtime and a managed PostgreSQL database.
+After the first deploy, run:
 ```bash
 php artisan migrate --force
+php artisan db:seed --force
 ```
